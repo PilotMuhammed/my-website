@@ -1,14 +1,13 @@
-
-
 <template>
   <div id="app">
+    <Navbar />
     <router-view />
   </div>
   
 </template>
 
 <script setup>
-// No imports needed at this stage
+  import Navbar from './components/Navbar.vue'
 </script>
 
 <style scoped>
