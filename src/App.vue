@@ -11,5 +11,16 @@
 </script>
 
 <style scoped>
-/* You can add global or layout styles here later */
+@media (max-width: 768px) {
+  #app {
+    padding-bottom: 80px;
+    position: relative;
+    overflow-x: hidden;
+  }
+}
+@media (min-width: 769px) {
+  #app {
+    margin-left: 70px; 
+  }
+}
 </style>
