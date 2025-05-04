@@ -1,23 +1,36 @@
 <template>
 <nav class="navbar">
-    <h2>test</h2>
-    <router-link to="/" class="nav-item" exact-active-class="active">
-    <House size="24" weight="duotone" />
+    <router-link to="/" class="nav-icon" exact-active-class="active" title="Home">
+    <div class="circle">
+        <HomeIcon class="icon" />
+    </div>
     </router-link>
-    <router-link to="/projects" class="nav-item" exact-active-class="active">
-    <Briefcase size="24" weight="duotone" />
+    <router-link to="/projects" class="nav-icon" exact-active-class="active" title="Projects">
+    <div class="circle">
+        <BriefcaseIcon class="icon" />
+    </div>
     </router-link>
-    <router-link to="/cv" class="nav-item" exact-active-class="active">
-    <FileText size="24" weight="duotone" />
+    <router-link to="/cv" class="nav-icon" exact-active-class="active" title="CV">
+    <div class="circle">
+        <DocumentTextIcon class="icon" />
+    </div>
     </router-link>
-    <router-link to="/books" class="nav-item" exact-active-class="active">
-    <BookOpen size="24" weight="duotone" />
+    <router-link to="/books" class="nav-icon" exact-active-class="active" title="Books">
+    <div class="circle">
+        <BookOpenIcon class="icon" />
+    </div>
     </router-link>
+    <router-link to="/courses" class="nav-icon" exact-active-class="active" title="Courses">
+    <div class="circle">
+        <PresentationChartBarIcon class="icon" />
+    </div>
+</router-link>
+
 </nav>
 </template>
 
 <script setup>
-import { House, Briefcase, FileText, BookOpen } from '@phosphor-icons/vue'
+import { HomeIcon, BriefcaseIcon, DocumentTextIcon, BookOpenIcon, PresentationChartBarIcon } from '@heroicons/vue/24/outline'
 </script>
 
 <style scoped>
@@ -25,27 +38,53 @@ import { House, Briefcase, FileText, BookOpen } from '@phosphor-icons/vue'
 position: fixed;
 top: 0;
 left: 0;
-width: 60px;
+width: 70px;
 height: 100vh;
-background-color: #ffffff;
-border-right: 1px solid #e5e7eb;
+background-color: var(--color-background);
 display: flex;
 flex-direction: column;
 align-items: center;
-padding-top: 1rem;
-gap: 1.5rem;
+justify-content: center;
+gap: 2rem;
+z-index: 1000;
+border-right: none;
+box-shadow: none;
 }
 
-.nav-item {
-color: #1f2937;
+.nav-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.circle {
+background-color: var(--color-border);
+border-radius: 50%;
+width: 55px;
+height: 55px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s ease;
+}
+
+.circle:hover {
+background-color: var(--color-accent);
+transform: scale(1.1);
+}
+
+.icon {
+width: 35px;
+height: 35px;
+color: var(--color-text);
 transition: color 0.3s;
 }
 
-.nav-item:hover {
-color: #3e64ff;
+.active .circle {
+background-color: var(--color-primary);
 }
 
-.active {
-color: #3e64ff;
+.active .icon {
+color: white;
 }
 </style>
