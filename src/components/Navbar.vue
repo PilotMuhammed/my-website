@@ -4,8 +4,8 @@
 <router-link to="/" class="nav-icon" exact-active-class="active" title="Home">
     <div class="circle"><HomeIcon class="icon" /></div>
 </router-link>
-<router-link to="/cv" class="nav-icon" exact-active-class="active" title="Resume">
-    <div class="circle"><DocumentTextIcon class="icon" /></div>
+<router-link to="/gallery" class="nav-icon" exact-active-class="active" title="Gallery">
+    <div class="circle"><PhotoIcon  class="icon" /></div>
 </router-link>
 <router-link to="/projects" class="nav-icon" exact-active-class="active" title="Projects">
     <div class="circle"><BriefcaseIcon class="icon" /></div>
@@ -60,19 +60,13 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import {
-HomeIcon,
-BriefcaseIcon,
-DocumentTextIcon,
-BookOpenIcon,
-PresentationChartBarIcon
-} from '@heroicons/vue/24/outline'
+import { HomeIcon, BriefcaseIcon, PhotoIcon, BookOpenIcon, PresentationChartBarIcon} from '@heroicons/vue/24/outline'
 
 const menuOpen = ref(false)
 const showGlow = ref(true)
 const menu = [
 { to: '/', icon: HomeIcon, title: 'Home' },
-{ to: '/cv', icon: DocumentTextIcon, title: 'Resume' },
+{ to: '/gallery', icon: PhotoIcon, title: 'Gallery' },
 { to: '/projects', icon: BriefcaseIcon, title: 'Projects' },
 { to: '/courses', icon: PresentationChartBarIcon, title: 'Courses' },
 { to: '/books', icon: BookOpenIcon, title: 'Books' }
