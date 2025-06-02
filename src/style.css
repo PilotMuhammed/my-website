@@ -69,11 +69,21 @@ button:focus-visible {
   background-color: white;
 }
 
-#app {
+/* #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+} */
+
+html, body, #app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* يمنع أي Scroll غير ضروري */
+  box-sizing: border-box;
 }
+
 
 /* Removed conflicting media override */
